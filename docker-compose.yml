@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   web2:
-    build: ./springboot-app2
+    image: geonho9/springboot2-web2:latest
     container_name: springboot_app2
     ports:
       - "9090:8880"
