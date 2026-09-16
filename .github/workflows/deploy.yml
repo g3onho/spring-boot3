@@ -60,6 +60,7 @@ jobs:
           script: |
             set -e
             cd ~/springboot2
+            git pull
 
             # (Docker Hub가 비공개 레포일 때만 필요)
             #if [ -n "${{ secrets.DOCKERHUB_USERNAME }}" ] && [ -n "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
