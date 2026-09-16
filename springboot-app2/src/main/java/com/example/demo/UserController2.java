@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 public class UserController2 {
@@ -17,12 +18,16 @@ public class UserController2 {
        return "<body bgcolor=yellow> changed!! </body>";
    }
 
-   @GetMapping("/mysql")
-    public String dbTest() {
+    //table생성
+    //member(id, pw)
+    //select id from member;
+    @GetMapping("/mysql2")
+    public String dbTest2() {
         try {
-            String sql = "SELECT now()";
-            String result = jdbcTemplate.queryForObject(sql, String.class);
-            return "Database test successful. now() : " + result;
+
+            String sql = "SELECT id FROM member";
+            List<String> ids = jdbcTemplate.queryForList(sql, String.class);
+            return "member ids : " + ids;
         } catch (Exception e) {
             e.printStackTrace();
             return "Database connection failed! Error: " + e.getMessage();
