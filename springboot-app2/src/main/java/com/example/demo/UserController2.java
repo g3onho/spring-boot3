@@ -13,7 +13,7 @@ public class UserController2 {
    private StringRedisTemplate redis;
    @GetMapping("/")
    public String hello() {
-       return "Spring Boot START PAGE";
+       return "<body><bg color=yellow> changed!! </body>";
    }
    @GetMapping("/mysql")
     public String dbTest() {
