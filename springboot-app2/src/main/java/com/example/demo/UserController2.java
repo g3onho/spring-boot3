@@ -11,10 +11,10 @@ public class UserController2 {
    private JdbcTemplate jdbcTemplate;
    @Autowired
    private StringRedisTemplate redis;
-   
+
    @GetMapping("/")
    public String hello() {
-       return "<body><bg color=yellow> changed!! </body>";
+       return "<body bgcolor=yellow> changed!! </body>";
    }
 
    @GetMapping("/mysql")
