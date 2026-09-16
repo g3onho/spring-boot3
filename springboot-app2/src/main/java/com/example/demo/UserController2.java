@@ -33,7 +33,7 @@ public class UserController2 {
     public String redisSet() {
         try {
             redis.opsForValue().set("key", "100");
-            return "Redis SET OK. key=key, value=100";
+            return "<body bgcolor=red> Redis SET OK. key=key, value=100 </body>";
         } catch (Exception e) {
             e.printStackTrace();
             return "Redis SET failed! Error: " + e.getMessage();
@@ -44,7 +44,8 @@ public class UserController2 {
     public String redisGet() {
         try {
             String value = redis.opsForValue().get("key");
-            return "Redis GET OK. key=key >> " + value;
+            return "<body bgcolor=red>Redis GET OK. key=key >> " + value + "</body>";
+
         } catch (Exception e) {
             e.printStackTrace();
             return "Redis GET failed! Error: " + e.getMessage();
